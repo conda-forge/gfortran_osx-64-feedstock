@@ -7,7 +7,7 @@ package:
   version: {{ gfortran_version|join('.') }}
 
 build:
-  number: 0
+  number: 1
   skip: True  # [not osx]
   run_exports:
     strong:
