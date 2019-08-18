@@ -7,7 +7,7 @@ package:
   version: {{ gfortran_version|join('.') }}
 
 build:
-  number: 2
+  number: 3
   skip: True  # [not osx]
   run_exports:
     strong:
@@ -16,10 +16,12 @@ build:
 requirements:
   host:
     - ld64
+    - cctools
   run:
     - gfortran_impl_osx-64 =={{ gfortran_version|join('.') }}
     - libgfortran >={{ libgfortran_version|join('.') }},<{{ max_libgfortran_version }}
     - ld64
+    - cctools
 
 test:
   files:

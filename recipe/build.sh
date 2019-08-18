@@ -20,5 +20,11 @@ mkdir -p ${PREFIX}/etc/conda/{de,}activate.d
 cp "${SRC_DIR}"/activate-gfortran.sh ${PREFIX}/etc/conda/activate.d/activate-${PKG_NAME}.sh
 cp "${SRC_DIR}"/deactivate-gfortran.sh ${PREFIX}/etc/conda/deactivate.d/deactivate-${PKG_NAME}.sh
 
-mkdir -p ${PREFIX}/gfortran_ld
-ln -s ${LD} ${PREFIX}/gfortran_ld/ld
+ln -s $LD       $PREFIX/lib/gcc/${CHOST}/${PKG_VERSION}/ld
+ln -s $AR       $PREFIX/lib/gcc/${CHOST}/${PKG_VERSION}/ar
+ln -s $AS       $PREFIX/lib/gcc/${CHOST}/${PKG_VERSION}/as
+ln -s $NM       $PREFIX/lib/gcc/${CHOST}/${PKG_VERSION}/nm
+ln -s $RANLIB   $PREFIX/lib/gcc/${CHOST}/${PKG_VERSION}/ranlib
+ln -s $STRIP    $PREFIX/lib/gcc/${CHOST}/${PKG_VERSION}/strip
+ln -s $OBJDUMP  $PREFIX/lib/gcc/${CHOST}/${PKG_VERSION}/objdump
+
