@@ -22,6 +22,7 @@ requirements:
   run:
     - gfortran_impl_osx-64 =={{ gfortran_version|join('.') }}
     - libgfortran >={{ libgfortran_version|join('.') }},<{{ max_libgfortran_version }}
+    - clang
     - ld64
     - cctools
 
