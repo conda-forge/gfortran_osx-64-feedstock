@@ -1,31 +1,31 @@
-{% set gfortran_version = [7, 3, 0] %}
-{% set libgfortran_version = [4, 0, 0] %}
+{% set version = "7.3.0" %}
+{% set libgfortran_version = "4.0.0" %}
 {% set max_libgfortran_version = "5.0.0.a0" %}
 
 package:
   name: gfortran_osx-64
-  version: {{ gfortran_version|join('.') }}
+  version: {{ version }}
 
 build:
-  number: 3
+  number: 4
   skip: True  # [not osx]
   run_exports:
     strong:
-      - libgfortran >={{ libgfortran_version|join('.') }},<{{ max_libgfortran_version }}
+      - libgfortran >={{ libgfortran_version }},<{{ max_libgfortran_version }}
 
 requirements:
   host:
     - clang
     - ld64
     - cctools
-    - gfortran_impl_osx-64 =={{ gfortran_version|join('.') }}
-    - libgfortran >={{ libgfortran_version|join('.') }},<{{ max_libgfortran_version }}
+    - gfortran_impl_osx-64 =={{ version }}
+    - libgfortran >={{ libgfortran_version }},<{{ max_libgfortran_version }}
   run:
     - clang
     - ld64
     - cctools
-    - gfortran_impl_osx-64 =={{ gfortran_version|join('.') }}
-    - libgfortran >={{ libgfortran_version|join('.') }},<{{ max_libgfortran_version }}
+    - gfortran_impl_osx-64 =={{ version }}
+    - libgfortran >={{ libgfortran_version }},<{{ max_libgfortran_version }}
 
 test:
   files:
@@ -33,6 +33,7 @@ test:
     - maths.f90
   commands:
     - gfortran --help
+    - test "$(readlink $PREFIX/lib/gcc/{{ macos_machine }}/{{ version }}/clang)" = "../../../../bin/clang"
 
 about:
   home: http://gcc.gnu.org/
