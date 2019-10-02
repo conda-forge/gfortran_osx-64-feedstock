@@ -14,6 +14,7 @@ find "${RECIPE_DIR}" -name "*activate*.sh" -exec cp {} . \;
 
 find . -name "*activate*.sh" -exec sed -i.bak "s|@CHOST@|${CHOST}|g" "{}" \;
 find . -name "*activate*.sh" -exec sed -i.bak "s|@FFLAGS@|${FFLAGS}|g" "{}" \;
+find . -name "*activate*.sh" -exec sed -i.bak "s|@LDFLAGS@|${LDFLAGS}|g" "{}" \;
 find . -name "*activate*.sh" -exec sed -i.bak "s|@DEBUG_FFLAGS@|${DEBUG_FFLAGS}|g" "{}" \;
 
 mkdir -p ${PREFIX}/etc/conda/{de,}activate.d
