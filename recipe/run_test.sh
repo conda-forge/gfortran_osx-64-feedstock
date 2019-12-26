@@ -21,6 +21,7 @@ rm -f maths
 $FC -c print_hello.f90 -o print_hello.o
 ${CXX} -c main.cpp -o main.o
 ${CXX} main.o print_hello.o -o main ${LDFLAGS} -lgfortran
+${FC} main.o print_hello.o -o main ${LDFLAGS}
 rm print_hello.o main.o main
 
 if [[ ! $FFLAGS ]]
