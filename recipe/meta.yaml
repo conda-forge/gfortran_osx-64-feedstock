@@ -30,6 +30,7 @@ requirements:
 test:
   requires:
     - clangxx_osx-64
+    - ld64 409.12 h3c32e8a_4
   files:
     - hello.f90
     - maths.f90
