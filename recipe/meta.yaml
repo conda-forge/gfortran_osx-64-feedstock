@@ -28,6 +28,8 @@ requirements:
     - libgfortran >={{ libgfortran_version }},<{{ max_libgfortran_version }}
 
 test:
+  requires:
+    - clangxx_osx-64
   files:
     - hello.f90
     - maths.f90
