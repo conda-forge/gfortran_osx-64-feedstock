@@ -42,6 +42,7 @@ test:
     - main.c
   commands:
     - gfortran --help
+    - echo "${CONDA_BUILD_SYSROOT}"
     - test "$(readlink $PREFIX/lib/gcc/{{ macos_machine }}/{{ version }}/clang)" = "../../../../bin/clang"
 
 about:
