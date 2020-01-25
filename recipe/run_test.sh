@@ -9,6 +9,9 @@ $FC -o hello hello.f90 ${LDFLAGS} -v
 $FC -o hello ${FFLAGS} hello.f90 -v
 ./hello
 
+$FC -o hello ${FFLAGS} hello.f90 -v -L$CONDA_BUILD_SYSROOT/usr/lib
+./hello
+
 $FC -o hello ${FFLAGS} hello.f90 ${LDFLAGS} -v
 ./hello
 
