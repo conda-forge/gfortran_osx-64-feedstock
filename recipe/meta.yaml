@@ -28,11 +28,21 @@ requirements:
     - libgfortran >={{ libgfortran_version }},<{{ max_libgfortran_version }}
 
 test:
+  requires:
+    - clang_osx-64
+    - clangxx_osx-64
+    - cmake
   files:
     - hello.f90
     - maths.f90
+    - CMakeLists.txt
+    - VerifyC.c
+    - VerifyCXX.cxx
+    - VerifyFortran.f
+    - main.c
   commands:
     - gfortran --help
+    - echo "${CONDA_BUILD_SYSROOT}"
     - test "$(readlink $PREFIX/lib/gcc/{{ macos_machine }}/{{ version }}/clang)" = "../../../../bin/clang"
 
 about:
