@@ -105,6 +105,8 @@ _tc_activation \
 # extra ones:
 unset FC
 unset F95
+unset F90
+unset F77
 
 if [ $? -ne 0 ]; then
   echo "ERROR: $(_get_sourced_filename) failed, see above for details"
