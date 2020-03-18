@@ -102,11 +102,13 @@ _tc_activation \
   "DEBUG_FFLAGS,${FFLAGS:-${FFLAGS_USED} @DEBUG_FFLAGS@}" \
   "DEBUG_FORTRANFLAGS,${FORTRANFLAGS:-${FFLAGS_USED} @DEBUG_FFLAGS@}" \
 
-# extra ones:
-unset FC
-unset F95
-unset F90
-unset F77
+# extra ones - have a dependency on the previous ones, so done after.
+_tc_activation \
+  deactivate host @CHOST@ @CHOST@- \
+  "FC,${FC:-${GFORTRAN}}" \
+  "F77,${F77:-${GFORTRAN}}" \
+  "F90,${F90:-${GFORTRAN}}" \
+  "F95,${F95:-${GFORTRAN}}"
 
 if [ $? -ne 0 ]; then
   echo "ERROR: $(_get_sourced_filename) failed, see above for details"
