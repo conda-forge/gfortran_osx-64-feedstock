@@ -7,7 +7,7 @@ package:
   version: {{ version }}
 
 build:
-  number: 9
+  number: 10
   skip: True  # [not osx]
   run_exports:
     strong:
@@ -37,8 +37,7 @@ test:
 
 about:
   home: http://gcc.gnu.org/
-  license: GPL 3 (with GCC Runtime Library Exception 3.1)
-  license_family: GPL
+  license: GPL-3.0-or-later WITH GCC-exception-3.1
   license_file: COPYING3
   summary: Fortran compiler from the GNU Compiler Collection
 

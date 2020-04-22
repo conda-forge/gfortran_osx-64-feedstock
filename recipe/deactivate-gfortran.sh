@@ -92,7 +92,12 @@ else
   LDFLAGS_USED="@LDFLAGS@ -Wl,-rpath,${CONDA_PREFIX}/lib -L${CONDA_PREFIX}/lib"
 fi
 
-env > /tmp/old-env-$$.txt
+if [ "${CONDA_BUILD:-0}" = "1" ]; then
+  if [ -f /tmp/old-env-$$.txt ]; then
+    rm -f /tmp/old-env-$$.txt || true
+  fi
+  env > /tmp/old-env-$$.txt
+fi
 _tc_activation \
   deactivate host @CHOST@ @CHOST@- \
   gfortran \
@@ -113,8 +118,14 @@ _tc_activation \
 if [ $? -ne 0 ]; then
   echo "ERROR: $(_get_sourced_filename) failed, see above for details"
 else
-  env > /tmp/new-env-$$.txt
-  echo "INFO: $(_get_sourced_filename) made the following environmental changes:"
-  diff -U 0 -rN /tmp/old-env-$$.txt /tmp/new-env-$$.txt | tail -n +4 | grep "^-.*\|^+.*" | grep -v "CONDA_BACKUP_" | sort
+  if [ "${CONDA_BUILD:-0}" = "1" ]; then
+    if [ -f /tmp/new-env-$$.txt ]; then
+      rm -f /tmp/new-env-$$.txt || true
+    fi
+
+    env > /tmp/new-env-$$.txt
+    echo "INFO: $(_get_sourced_filename) made the following environmental changes:"
+    diff -U 0 -rN /tmp/old-env-$$.txt /tmp/new-env-$$.txt | tail -n +4 | grep "^-.*\|^+.*" | grep -v "CONDA_BACKUP_" | sort
+    rm -f /tmp/old-env-$$.txt /tmp/new-env-$$.txt || true
+  fi
 fi
-rm -f /tmp/old-env-$$.txt /tmp/new-env-$$.txt || true
