@@ -4,6 +4,7 @@ CHOST=${macos_machine}
 # We do not use -fopenmp here even though it *may* be possible to.
 FFLAGS="-march=nocona -mtune=core2 -ftree-vectorize -fPIC -fstack-protector -O2 -pipe"
 DEBUG_FFLAGS="-march=nocona -mtune=core2 -ftree-vectorize -fPIC -fstack-protector -O2 -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fimplicit-none -fvar-tracking-assignments"
+LDFLAGS="-Wl,-pie -Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs"
 
 # pushd ${PREFIX}/bin
 #   # It is expected this will be built on macOS only:
