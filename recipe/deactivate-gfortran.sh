@@ -106,6 +106,9 @@ _tc_activation \
   "FORTRANFLAGS,${FORTRANFLAGS:-${FFLAGS_USED}}" \
   "DEBUG_FFLAGS,${FFLAGS:-${FFLAGS_USED} @DEBUG_FFLAGS@}" \
   "DEBUG_FORTRANFLAGS,${FORTRANFLAGS:-${FFLAGS_USED} @DEBUG_FFLAGS@}" \
+  "CONDA_BUILD_CROSS_COMPILATION,@CONDA_BUILD_CROSS_COMPILATION@" \
+  "CONDA_BUILD_SYSROOT,${CONDA_BUILD_SYSROOT:-${SDKROOT:-$(xcrun --show-sdk-path)}}" \
+  "ac_cv_host,@CHOST@"
 
 # extra ones - have a dependency on the previous ones, so done after.
 _tc_activation \

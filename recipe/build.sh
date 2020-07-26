@@ -11,12 +11,19 @@ LDFLAGS="-Wl,-pie -Wl,-headerpad_max_install_names -Wl,-dead_strip_dylibs"
 #   ln -s gfortran ${BUILD}-gfortran
 # popd
 
+if [[ "$target_platform" == "osx-64" ]]; then
+  export CONDA_BUILD_CROSS_COMPILATION=""
+else
+  export CONDA_BUILD_CROSS_COMPILATION="1"
+fi
+
 find "${RECIPE_DIR}" -name "*activate*.sh" -exec cp {} . \;
 
 find . -name "*activate*.sh" -exec sed -i.bak "s|@CHOST@|${CHOST}|g" "{}" \;
 find . -name "*activate*.sh" -exec sed -i.bak "s|@FFLAGS@|${FFLAGS}|g" "{}" \;
 find . -name "*activate*.sh" -exec sed -i.bak "s|@LDFLAGS@|${LDFLAGS}|g" "{}" \;
 find . -name "*activate*.sh" -exec sed -i.bak "s|@DEBUG_FFLAGS@|${DEBUG_FFLAGS}|g" "{}" \;
+find . -name "*activate*.sh" -exec sed -i.bak "s|@CONDA_BUILD_CROSS_COMPILATION@|${CONDA_BUILD_CROSS_COMPILATION}|g" "{}" \;
 
 mkdir -p ${PREFIX}/etc/conda/{de,}activate.d
 cp "${SRC_DIR}"/activate-gfortran.sh ${PREFIX}/etc/conda/activate.d/activate-${PKG_NAME}.sh

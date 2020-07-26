@@ -1,4 +1,4 @@
-{% set version = "7.3.0" %}
+{% set version = "7.5.0" %}
 {% set libgfortran_version = "4.0.0" %}
 {% set max_libgfortran_version = "5.0.0.a0" %}
 
@@ -7,8 +7,8 @@ package:
   version: {{ version }}
 
 build:
-  number: 11
-  skip: True  # [not osx]
+  number: 0
+  skip: True  # [win]
   run_exports:
     strong:
       - libgfortran >={{ libgfortran_version }},<{{ max_libgfortran_version }}
@@ -19,13 +19,12 @@ requirements:
     - ld64
     - cctools
     - gfortran_impl_osx-64 =={{ version }}
-    - libgfortran >={{ libgfortran_version }},<{{ max_libgfortran_version }}
   run:
     - clang
     - ld64
     - cctools
     - gfortran_impl_osx-64 =={{ version }}
-    - libgfortran >={{ libgfortran_version }},<{{ max_libgfortran_version }}
+    - libgfortran >={{ libgfortran_version }},<{{ max_libgfortran_version }}  # [osx]
 
 test:
   files:
