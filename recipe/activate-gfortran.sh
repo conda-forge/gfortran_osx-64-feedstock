@@ -98,6 +98,12 @@ if [ "${CONDA_BUILD:-0}" = "1" ]; then
   env > /tmp/old-env-$$.txt
 fi
 
+if [ "@CONDA_BUILD_CROSS_COMPILATION@" = "1" ]; then
+  if [ "${CONDA_BUILD_SYSROOT:-${SDKROOT}}" = "" ]; then
+    echo "ERROR: CONDA_BUILD_SYSROOT or SDKROOT has to be set for cross-compiling"
+  fi
+fi
+
 _tc_activation \
   activate host @CHOST@ @CHOST@- \
   gfortran \
@@ -106,6 +112,9 @@ _tc_activation \
   "FORTRANFLAGS,${FORTRANFLAGS:-${FFLAGS_USED}}" \
   "DEBUG_FFLAGS,${FFLAGS:-${FFLAGS_USED} @DEBUG_FFLAGS@}" \
   "DEBUG_FORTRANFLAGS,${FORTRANFLAGS:-${FFLAGS_USED} @DEBUG_FFLAGS@}" \
+  "CONDA_BUILD_CROSS_COMPILATION,@CONDA_BUILD_CROSS_COMPILATION@" \
+  "CONDA_BUILD_SYSROOT,${CONDA_BUILD_SYSROOT:-${SDKROOT:-$(xcrun --show-sdk-path)}}" \
+  "ac_cv_host,@CHOST@"
 
 # extra ones - have a dependency on the previous ones, so done after.
 _tc_activation \

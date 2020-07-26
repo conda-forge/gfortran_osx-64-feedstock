@@ -1,24 +1,32 @@
 #!/bin/bash
 
+if [[ "$target_platform" == osx-64 ]]; then
+  RUN_EXE=""
+else
+  RUN_EXE="echo"
+  FC="$FC -c"
+fi
+
+
 $FC -o hello hello.f90 -v
-./hello
+$RUN_EXE ./hello
 
 $FC -o hello hello.f90 ${LDFLAGS} -v
-./hello
+$RUN_EXE ./hello
 
 $FC -o hello ${FFLAGS} hello.f90 -v
-./hello
+$RUN_EXE ./hello
 
 $FC -o hello ${FFLAGS} hello.f90 -v -L$CONDA_BUILD_SYSROOT/usr/lib
-./hello
+$RUN_EXE ./hello
 
 $FC -o hello ${FFLAGS} hello.f90 ${LDFLAGS} -v
-./hello
+$RUN_EXE ./hello
 
 rm -f hello
 
-$FC -O3 -fopenmp -ffast-math -o maths maths.f90 -v
-./maths
+$RUN_EXE $FC -O3 -fopenmp -ffast-math -o maths maths.f90 -v
+$RUN_EXE ./maths
 rm -f maths
 
 if [[ ! $FFLAGS ]]
