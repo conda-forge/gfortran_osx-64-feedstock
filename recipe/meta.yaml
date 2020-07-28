@@ -7,7 +7,7 @@ package:
   version: {{ version }}
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win]
   run_exports:
     strong:
@@ -16,13 +16,13 @@ build:
 requirements:
   host:
     - clang
-    - ld64
-    - cctools
+    - ld64_osx_64
+    - cctools_osx-64
     - gfortran_impl_osx-64 =={{ version }}
   run:
     - clang
-    - ld64
-    - cctools
+    - ld64_osx-64
+    - cctools_osx-64
     - gfortran_impl_osx-64 =={{ version }}
     - libgfortran >={{ libgfortran_version }},<{{ max_libgfortran_version }}  # [osx]
 
