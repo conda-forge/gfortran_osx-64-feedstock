@@ -16,7 +16,7 @@ build:
 requirements:
   host:
     - clang
-    - ld64_osx_64
+    - ld64_osx-64
     - cctools_osx-64
     - gfortran_impl_osx-64 =={{ version }}
   run:
