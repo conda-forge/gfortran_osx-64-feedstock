@@ -57,6 +57,7 @@ function _tc_activation() {
           ;;
         *)
           newval=$(which ${CONDA_PREFIX}/bin/${tc_prefix}${thing} 2>/dev/null)
+          thing=$(echo ${thing} | tr 'a-z+-' 'A-ZX_')
           if [ -z "${newval}" -a "${pass}" = "check" ]; then
             echo "ERROR: This cross-compiler package contains no program ${CONDA_PREFIX}/bin/${tc_prefix}${thing}"
             return 1
@@ -64,7 +65,6 @@ function _tc_activation() {
           ;;
       esac
       if [ "${pass}" = "apply" ]; then
-        thing=$(echo ${thing} | tr 'a-z+-' 'A-ZX_')
         eval oldval="\$${from}$thing"
         if [ -n "${oldval}" ]; then
           eval export "${to}'${thing}'=\"${oldval}\""
