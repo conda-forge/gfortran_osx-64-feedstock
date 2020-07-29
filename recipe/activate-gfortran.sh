@@ -105,7 +105,7 @@ if [ "@CONDA_BUILD_CROSS_COMPILATION@" = "1" ]; then
 fi
 
 _tc_activation \
-  activate host @CHOST@ @CHOST@- \
+  activate HOST @CHOST@ @CHOST@- \
   gfortran \
   "FFLAGS,${FFLAGS:-${FFLAGS_USED}}" \
   "LDFLAGS,${LDFLAGS:-${LDFLAGS_USED}}" \

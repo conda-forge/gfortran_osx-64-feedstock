@@ -99,7 +99,7 @@ if [ "${CONDA_BUILD:-0}" = "1" ]; then
   env > /tmp/old-env-$$.txt
 fi
 _tc_activation \
-  deactivate host @CHOST@ @CHOST@- \
+  deactivate HOST @CHOST@ @CHOST@- \
   gfortran \
   "FFLAGS,${FFLAGS:-${FFLAGS_USED}}" \
   "LDFLAGS,${LDFLAGS:-${LDFLAGS_USED}}" \
