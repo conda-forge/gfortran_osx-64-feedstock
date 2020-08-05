@@ -30,8 +30,6 @@ function _get_sourced_filename() {
 #  a fatal error if a program is identified but not present.
 function _tc_activation() {
   local act_nature=$1; shift
-  local tc_nature=$1; shift
-  local tc_machine=$1; shift
   local tc_prefix=$1; shift
   local thing
   local newval
@@ -48,7 +46,7 @@ function _tc_activation() {
   fi
 
   for pass in check apply; do
-    for thing in $tc_nature,$tc_machine "$@"; do
+    for thing in "$@"; do
       case "${thing}" in
         *,*)
           newval=$(echo "${thing}" | sed "s,^[^\,]*\,\(.*\),\1,")
@@ -85,10 +83,8 @@ function _tc_activation() {
 #    the host env's includes and libs is helpful default behavior
 if [ "${CONDA_BUILD:-0}" = "1" ]; then
   FFLAGS_USED="@FFLAGS@ -isystem ${PREFIX}/include -fdebug-prefix-map=${SRC_DIR}=/usr/local/src/conda/${PKG_NAME}-${PKG_VERSION} -fdebug-prefix-map=${PREFIX}=/usr/local/src/conda-prefix"
-  LDFLAGS_USED="@LDFLAGS@ -Wl,-rpath,${PREFIX}/lib -L${PREFIX}/lib"
 else
   FFLAGS_USED="@FFLAGS@ -isystem ${CONDA_PREFIX}/include"
-  LDFLAGS_USED="@LDFLAGS@ -Wl,-rpath,${CONDA_PREFIX}/lib -L${CONDA_PREFIX}/lib"
 fi
 
 if [ "${CONDA_BUILD:-0}" = "1" ]; then
@@ -98,27 +94,17 @@ if [ "${CONDA_BUILD:-0}" = "1" ]; then
   env > /tmp/old-env-$$.txt
 fi
 
-if [ "@CONDA_BUILD_CROSS_COMPILATION@" = "1" ]; then
-  if [ "${CONDA_BUILD_SYSROOT:-${SDKROOT}}" = "" ]; then
-    echo "ERROR: CONDA_BUILD_SYSROOT or SDKROOT has to be set for cross-compiling"
-  fi
-fi
-
 _tc_activation \
-  activate HOST @CHOST@ @CHOST@- \
+  activate @CHOST@- \
   gfortran \
   "FFLAGS,${FFLAGS:-${FFLAGS_USED}}" \
-  "LDFLAGS,${LDFLAGS:-${LDFLAGS_USED}}" \
   "FORTRANFLAGS,${FORTRANFLAGS:-${FFLAGS_USED}}" \
   "DEBUG_FFLAGS,${FFLAGS:-${FFLAGS_USED} @DEBUG_FFLAGS@}" \
-  "DEBUG_FORTRANFLAGS,${FORTRANFLAGS:-${FFLAGS_USED} @DEBUG_FFLAGS@}" \
-  "CONDA_BUILD_CROSS_COMPILATION,@CONDA_BUILD_CROSS_COMPILATION@" \
-  "CONDA_BUILD_SYSROOT,${CONDA_BUILD_SYSROOT:-${SDKROOT:-$(xcrun --show-sdk-path)}}" \
-  "host_alias,@CHOST@"
+  "DEBUG_FORTRANFLAGS,${FORTRANFLAGS:-${FFLAGS_USED} @DEBUG_FFLAGS@}"
 
 # extra ones - have a dependency on the previous ones, so done after.
 _tc_activation \
-  activate host @CHOST@ @CHOST@- \
+  activate @CHOST@- \
   "FC,${FC:-${GFORTRAN}}" \
   "F77,${F77:-${GFORTRAN}}" \
   "F90,${F90:-${GFORTRAN}}" \

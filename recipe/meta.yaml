@@ -7,7 +7,7 @@ package:
   version: {{ version }}
 
 build:
-  number: 4
+  number: 5
   skip: True  # [win]
   run_exports:
     strong:
@@ -25,6 +25,7 @@ requirements:
     - cctools_osx-64
     - gfortran_impl_osx-64 =={{ version }}
     - libgfortran >={{ libgfortran_version }},<{{ max_libgfortran_version }}  # [osx]
+    - clang_osx-64
 
 test:
   files:
