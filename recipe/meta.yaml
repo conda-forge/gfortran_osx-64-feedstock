@@ -13,7 +13,7 @@ build:
   skip: True  # [win]
   run_exports:
     strong:
-      - libgfortran{{ libgfortran_major_version}} >={{ gfortran_version }}
+      - libgfortran{{ libgfortran_major_version }} >={{ gfortran_version }}
 
 requirements:
   host:
