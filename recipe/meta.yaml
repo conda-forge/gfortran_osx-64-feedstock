@@ -13,6 +13,7 @@ build:
   skip: True  # [win]
   run_exports:
     strong:
+      - libgfortran {{ libgfortran_major_version }}.*
       - libgfortran{{ libgfortran_major_version }} >={{ gfortran_version }}
 
 requirements:
@@ -26,6 +27,7 @@ requirements:
     - ld64_osx-64
     - cctools_osx-64
     - gfortran_impl_osx-64 =={{ version }}
+    - libgfortran {{ libgfortran_major_version }}.*                                     # [osx]
     - libgfortran{{ libgfortran_major_version }} >={{ gfortran_version }}  # [osx]
     - clang_osx-64
 
