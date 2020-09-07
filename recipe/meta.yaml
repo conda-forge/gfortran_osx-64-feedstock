@@ -30,10 +30,6 @@ build:
 
 requirements:
   host:
-    - clang
-    - ld64_{{ cross_target_platform }}
-    - cctools_{{ cross_target_platform }}
-    - gfortran_impl_{{ cross_target_platform }} =={{ version }}{{ version_suffix }}
   run:
     - clang
     - ld64_{{ cross_target_platform }}
