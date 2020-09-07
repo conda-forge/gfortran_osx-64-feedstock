@@ -4,11 +4,14 @@ channel_sources:
 - conda-forge,defaults
 channel_targets:
 - conda-forge main
-docker_image:
-- condaforge/linux-anvil-comp7
+cross_target_platform:
+- osx-arm64
 gfortran_version:
-- 9.3.0
+- 7.5.0
 macos_machine:
-- x86_64-apple-darwin13.4.0
+- arm64-apple-darwin20.0.0
 target_platform:
-- linux-64
+- osx-64
+zip_keys:
+- - cross_target_platform
+  - macos_machine
