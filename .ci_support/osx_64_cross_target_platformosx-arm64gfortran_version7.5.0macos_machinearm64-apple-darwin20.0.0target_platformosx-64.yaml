@@ -1,7 +1,7 @@
 MACOSX_DEPLOYMENT_TARGET:
 - '10.9'
 channel_sources:
-- conda-forge,defaults
+- conda-forge
 channel_targets:
 - conda-forge main
 cross_target_platform:
@@ -15,3 +15,5 @@ target_platform:
 zip_keys:
 - - cross_target_platform
   - macos_machine
+- - gfortran_version
+  - channel_sources
