@@ -10,7 +10,7 @@ DEBUG_FFLAGS="-march=nocona -mtune=core2 -ftree-vectorize -fPIC -fstack-protecto
 #   ln -s gfortran ${BUILD}-gfortran
 # popd
 
-if [[ "$target_platform" == "osx-64" ]]; then
+if [[ "$target_platform" == "$cross_target_platform" ]]; then
   export CONDA_BUILD_CROSS_COMPILATION=""
 else
   export CONDA_BUILD_CROSS_COMPILATION="1"
