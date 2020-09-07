@@ -9,6 +9,10 @@ if [[ "$cross_target_platform" == "osx-64" ]]; then
   export FFLAGS="-march=nocona -mtune=core2 ${FFLAGS}"
   export DEBUG_FFLAGS="-march=nocona -mtune=core2 ${DEBUG_FFLAGS}"
 fi
+if [[ "$cross_target_platform" == "osx-arm64" ]]; then
+  export FFLAGS="-march=armv8.3-a ${FFLAGS}"
+  export DEBUG_FFLAGS="-march=armv8.3-a ${DEBUG_FFLAGS}"
+fi
 
 # pushd ${PREFIX}/bin
 #   # It is expected this will be built on macOS only:
