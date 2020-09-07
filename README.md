@@ -133,6 +133,7 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-gfortran_osx--64-green.svg)](https://anaconda.org/conda-forge/gfortran_osx-64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gfortran_osx-64.svg)](https://anaconda.org/conda-forge/gfortran_osx-64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gfortran_osx-64.svg)](https://anaconda.org/conda-forge/gfortran_osx-64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gfortran_osx-64.svg)](https://anaconda.org/conda-forge/gfortran_osx-64) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-gfortran_osx--arm64-green.svg)](https://anaconda.org/conda-forge/gfortran_osx-arm64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gfortran_osx-arm64.svg)](https://anaconda.org/conda-forge/gfortran_osx-arm64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gfortran_osx-arm64.svg)](https://anaconda.org/conda-forge/gfortran_osx-arm64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gfortran_osx-arm64.svg)](https://anaconda.org/conda-forge/gfortran_osx-arm64) |
 
 Installing gfortran_osx-64
 ==========================
@@ -143,10 +144,10 @@ Installing `gfortran_osx-64` from the `conda-forge` channel can be achieved by a
 conda config --add channels conda-forge
 ```
 
-Once the `conda-forge` channel has been enabled, `gfortran_osx-64` can be installed with:
+Once the `conda-forge` channel has been enabled, `gfortran_osx-64, gfortran_osx-arm64` can be installed with:
 
 ```
-conda install gfortran_osx-64
+conda install gfortran_osx-64 gfortran_osx-arm64
 ```
 
 It is possible to list all of the versions of `gfortran_osx-64` available on your platform with:
