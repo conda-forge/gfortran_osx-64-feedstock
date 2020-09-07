@@ -6,8 +6,8 @@ FFLAGS="-ftree-vectorize -fPIC -fstack-protector -O2 -pipe"
 DEBUG_FFLAGS="-ftree-vectorize -fPIC -fstack-protector -O2 -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fimplicit-none -fvar-tracking-assignments"
 
 if [[ "$cross_target_platform" == "osx-64" ]]; then
-  export FFLAGS="-march=nocona -mtune=core2 ${FFLAGS}"
-  export DEBUG_FFLAGS="-march=nocona -mtune=core2 ${DEBUG_FFLAGS}"
+  export FFLAGS="-march=core2 -mtune=haswell ${FFLAGS}"
+  export DEBUG_FFLAGS="-march=core2 -mtune=haswell ${DEBUG_FFLAGS}"
 fi
 if [[ "$cross_target_platform" == "osx-arm64" ]]; then
   export FFLAGS="-march=armv8.3-a ${FFLAGS}"
