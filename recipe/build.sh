@@ -2,15 +2,24 @@
 
 CHOST=${macos_machine}
 # We do not use -fopenmp here even though it *may* be possible to.
-FFLAGS="-march=nocona -mtune=core2 -ftree-vectorize -fPIC -fstack-protector -O2 -pipe"
-DEBUG_FFLAGS="-march=nocona -mtune=core2 -ftree-vectorize -fPIC -fstack-protector -O2 -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fimplicit-none -fvar-tracking-assignments"
+FFLAGS="-ftree-vectorize -fPIC -fstack-protector -O2 -pipe"
+DEBUG_FFLAGS="-ftree-vectorize -fPIC -fstack-protector -O2 -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fimplicit-none -fvar-tracking-assignments"
+
+if [[ "$cross_target_platform" == "osx-64" ]]; then
+  export FFLAGS="-march=core2 -mtune=haswell ${FFLAGS}"
+  export DEBUG_FFLAGS="-march=core2 -mtune=haswell ${DEBUG_FFLAGS}"
+fi
+if [[ "$cross_target_platform" == "osx-arm64" ]]; then
+  export FFLAGS="-march=armv8.3-a ${FFLAGS}"
+  export DEBUG_FFLAGS="-march=armv8.3-a ${DEBUG_FFLAGS}"
+fi
 
 # pushd ${PREFIX}/bin
 #   # It is expected this will be built on macOS only:
 #   ln -s gfortran ${BUILD}-gfortran
 # popd
 
-if [[ "$target_platform" == "osx-64" ]]; then
+if [[ "$target_platform" == "$cross_target_platform" ]]; then
   export CONDA_BUILD_CROSS_COMPILATION=""
 else
   export CONDA_BUILD_CROSS_COMPILATION="1"
@@ -27,15 +36,11 @@ mkdir -p ${PREFIX}/etc/conda/{de,}activate.d
 cp "${SRC_DIR}"/activate-gfortran.sh ${PREFIX}/etc/conda/activate.d/activate-${PKG_NAME}.sh
 cp "${SRC_DIR}"/deactivate-gfortran.sh ${PREFIX}/etc/conda/deactivate.d/deactivate-${PKG_NAME}.sh
 
-# Stop conda-build from following links
-rm ${PREFIX}/bin/clang
-touch ${PREFIX}/bin/clang
-
-ln -s ${PREFIX}/bin/${CHOST}-ar       $PREFIX/lib/gcc/${CHOST}/${PKG_VERSION}/ar
-ln -s ${PREFIX}/bin/${CHOST}-as       $PREFIX/lib/gcc/${CHOST}/${PKG_VERSION}/as
-ln -s ${PREFIX}/bin/clang             $PREFIX/lib/gcc/${CHOST}/${PKG_VERSION}/clang
-ln -s ${PREFIX}/bin/${CHOST}-nm       $PREFIX/lib/gcc/${CHOST}/${PKG_VERSION}/nm
-ln -s ${PREFIX}/bin/${CHOST}-ranlib   $PREFIX/lib/gcc/${CHOST}/${PKG_VERSION}/ranlib
-ln -s ${PREFIX}/bin/${CHOST}-strip    $PREFIX/lib/gcc/${CHOST}/${PKG_VERSION}/strip
-ln -s ${PREFIX}/bin/${CHOST}-ld       $PREFIX/lib/gcc/${CHOST}/${PKG_VERSION}/ld
+ln -s ${PREFIX}/bin/${CHOST}-ar       $PREFIX/lib/gcc/${CHOST}/${gfortran_version}/ar
+ln -s ${PREFIX}/bin/${CHOST}-as       $PREFIX/lib/gcc/${CHOST}/${gfortran_version}/as
+ln -s ${PREFIX}/bin/clang             $PREFIX/lib/gcc/${CHOST}/${gfortran_version}/clang
+ln -s ${PREFIX}/bin/${CHOST}-nm       $PREFIX/lib/gcc/${CHOST}/${gfortran_version}/nm
+ln -s ${PREFIX}/bin/${CHOST}-ranlib   $PREFIX/lib/gcc/${CHOST}/${gfortran_version}/ranlib
+ln -s ${PREFIX}/bin/${CHOST}-strip    $PREFIX/lib/gcc/${CHOST}/${gfortran_version}/strip
+ln -s ${PREFIX}/bin/${CHOST}-ld       $PREFIX/lib/gcc/${CHOST}/${gfortran_version}/ld
 
