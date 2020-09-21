@@ -36,7 +36,7 @@ requirements:
     - ld64_{{ cross_target_platform }}
     - cctools_{{ cross_target_platform }}
     - gfortran_impl_{{ cross_target_platform }} =={{ version }}{{ version_suffix }}
-    - libgfortran-devel_{{ cross_target_platform }} =={{ version  }}{{ version_suffix }}
+    - libgfortran-devel_{{ cross_target_platform }} =={{ version }}{{ version_suffix }}
     - libgfortran {{ libgfortran_major_version }}.*                                   # [target_platform == cross_target_platform]
     - libgfortran{{ libgfortran_major_version }} >={{ version }}{{ version_suffix }}  # [target_platform == cross_target_platform]
     - clang_{{ cross_target_platform }}
