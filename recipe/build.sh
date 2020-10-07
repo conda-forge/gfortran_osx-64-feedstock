@@ -13,6 +13,7 @@ if [[ "$cross_target_platform" == "osx-arm64" ]]; then
   export FFLAGS="-march=armv8.3-a ${FFLAGS}"
   export DEBUG_FFLAGS="-march=armv8.3-a ${DEBUG_FFLAGS}"
   export FFLAGS=${FFLAGS//"-fstack-protector"/"-fno-stack-protector"}
+  export FFLAGS=${DEBUG_FFLAGS//"-fstack-protector"/"-fno-stack-protector"}
 fi
 
 # pushd ${PREFIX}/bin
