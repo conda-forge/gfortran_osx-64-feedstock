@@ -13,7 +13,7 @@ if [[ "$cross_target_platform" == "osx-arm64" ]]; then
   export FFLAGS="-march=armv8.3-a ${FFLAGS}"
   export DEBUG_FFLAGS="-march=armv8.3-a ${DEBUG_FFLAGS}"
   export FFLAGS=${FFLAGS//"-fstack-protector"/"-fno-stack-protector"}
-  export FFLAGS=${DEBUG_FFLAGS//"-fstack-protector"/"-fno-stack-protector"}
+  export DEBUG_FFLAGS=${DEBUG_FFLAGS//"-fstack-protector"/"-fno-stack-protector"}
 fi
 
 # pushd ${PREFIX}/bin
@@ -45,4 +45,3 @@ ln -s ${PREFIX}/bin/${CHOST}-nm       $PREFIX/lib/gcc/${CHOST}/${gfortran_versio
 ln -s ${PREFIX}/bin/${CHOST}-ranlib   $PREFIX/lib/gcc/${CHOST}/${gfortran_version}/ranlib
 ln -s ${PREFIX}/bin/${CHOST}-strip    $PREFIX/lib/gcc/${CHOST}/${gfortran_version}/strip
 ln -s ${PREFIX}/bin/${CHOST}-ld       $PREFIX/lib/gcc/${CHOST}/${gfortran_version}/ld
-
