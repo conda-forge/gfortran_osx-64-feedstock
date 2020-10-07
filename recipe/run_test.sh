@@ -1,6 +1,6 @@
 #!/bin/bash
 
-if [[ "$target_platform" == osx-64 ]]; then
+if [[ "${target_platform}" == "osx-64" && "${cross_target_platform}" == "osx-64" ]]; then
   RUN_EXE=""
 else
   RUN_EXE="echo"

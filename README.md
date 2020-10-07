@@ -5,11 +5,9 @@ Home: http://gcc.gnu.org/
 
 Package license: GPL-3.0-or-later WITH GCC-exception-3.1
 
-Feedstock license: BSD-3-Clause
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/gfortran_osx-64-feedstock/blob/master/LICENSE.txt)
 
 Summary: Fortran compiler from the GNU Compiler Collection
-
-
 
 Current build status
 ====================
