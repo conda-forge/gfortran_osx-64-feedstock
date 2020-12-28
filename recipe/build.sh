@@ -1,7 +1,7 @@
 #!/bin/bash
 
+CBUILD=${HOST}
 CHOST=${macos_machine}
-CBUILD=$(${PREFIX}/bin/gfortran -dumpmachine)
 # We do not use -fopenmp here even though it *may* be possible to.
 FFLAGS="-ftree-vectorize -fPIC -fstack-protector -O2 -pipe"
 DEBUG_FFLAGS="-ftree-vectorize -fPIC -fstack-protector -O2 -pipe -Og -g -Wall -Wextra -fcheck=all -fbacktrace -fimplicit-none -fvar-tracking-assignments"

@@ -27,11 +27,14 @@ build:
     strong:
       - libgfortran {{ libgfortran_major_version }}.*
       - libgfortran{{ libgfortran_major_version }} >={{ version }}{{ version_suffix }}
+  ignore_run_exports_from:
+    - gfortran_{{ target_platform }}
 
 requirements:
+  build:
+    - gfortran_{{ target_platform }}   # [target_platform != cross_target_platform]
   host:
     - gfortran_impl_{{ cross_target_platform }} =={{ version }}{{ version_suffix }}
-    - gfortran_impl_{{ target_platform }}
   run:
     - clang
     - ld64_{{ cross_target_platform }}
