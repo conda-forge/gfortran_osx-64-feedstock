@@ -98,6 +98,7 @@ fi
 _tc_activation \
   deactivate @CHOST@- \
   gfortran \
+  "FC_FOR_BUILD,${CONDA_PREFIX}/bin/@CBUILD@-gfortran" \
   "FFLAGS,${FFLAGS:-${FFLAGS_USED}}" \
   "FORTRANFLAGS,${FORTRANFLAGS:-${FFLAGS_USED}}" \
   "DEBUG_FFLAGS,${FFLAGS:-${FFLAGS_USED} @DEBUG_FFLAGS@}" \
