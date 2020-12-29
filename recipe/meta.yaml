@@ -19,7 +19,7 @@ package:
   version: {{ version }}{{ version_suffix }}
 
 build:
-  number: 11
+  number: 12
   skip: True  # [win]
   skip: True  # [gfortran_version == "11.0.0" and cross_target_platform != "osx-arm64"]
   skip: True  # [gfortran_version != "11.0.0" and (cross_target_platform == "osx-arm64" or target_platform == "osx-arm64")]
@@ -42,6 +42,7 @@ requirements:
     - gfortran_impl_{{ cross_target_platform }} =={{ version }}{{ version_suffix }}
     - gfortran_impl_{{ target_platform }}
     - libgfortran-devel_{{ cross_target_platform }} =={{ version }}{{ version_suffix }}
+    - libgfortran-devel_{{ target_platform }}         # [osx]
     - libgfortran {{ libgfortran_major_version }}.*                                   # [target_platform == cross_target_platform]
     - libgfortran{{ libgfortran_major_version }} >={{ version }}{{ version_suffix }}  # [target_platform == cross_target_platform]
     - clang_{{ cross_target_platform }}
