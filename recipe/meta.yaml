@@ -15,46 +15,65 @@
 {% endif %}
 
 package:
-  name: gfortran_{{ cross_target_platform }}
+  name: gfortran-split
   version: {{ version }}{{ version_suffix }}
 
 build:
-  number: 12
+  number: 13
   skip: True  # [win]
-  skip: True  # [gfortran_version == "11.0.0" and cross_target_platform != "osx-arm64"]
-  skip: True  # [gfortran_version != "11.0.0" and (cross_target_platform == "osx-arm64" or target_platform == "osx-arm64")]
-  run_exports:
-    strong:
-      - libgfortran {{ libgfortran_major_version }}.*
-      - libgfortran{{ libgfortran_major_version }} >={{ version }}{{ version_suffix }}
-  ignore_run_exports_from:
-    - gfortran_{{ target_platform }}
+  skip: True  # [gfortran_version in ("11.0.0", "10.2.1") and cross_target_platform != "osx-arm64"]
+  skip: True  # [gfortran_version not in ("11.0.0", "10.2.1") and (cross_target_platform == "osx-arm64" or target_platform == "osx-arm64")]
 
-requirements:
-  build:
-    - gfortran_{{ target_platform }}   # [target_platform != cross_target_platform]
-  host:
-    - gfortran_impl_{{ cross_target_platform }} =={{ version }}{{ version_suffix }}
-  run:
-    - clang
-    - ld64_{{ cross_target_platform }}
-    - cctools_{{ cross_target_platform }}
-    - gfortran_impl_{{ cross_target_platform }} =={{ version }}{{ version_suffix }}
-    - gfortran_impl_{{ target_platform }}
-    - libgfortran-devel_{{ cross_target_platform }} =={{ version }}{{ version_suffix }}
-    - libgfortran-devel_{{ target_platform }}         # [osx]
-    - libgfortran {{ libgfortran_major_version }}.*                                   # [target_platform == cross_target_platform]
-    - libgfortran{{ libgfortran_major_version }} >={{ version }}{{ version_suffix }}  # [target_platform == cross_target_platform]
-    - clang_{{ cross_target_platform }}
+outputs:
+  - name: gfortran_{{ cross_target_platform }}
+    script: build_gfortran.sh
+    build:
+      run_exports:
+        strong:
+          - libgfortran {{ libgfortran_major_version }}.*
+          - libgfortran{{ libgfortran_major_version }} >={{ version }}{{ version_suffix }}
+      ignore_run_exports_from:
+        - gfortran_{{ target_platform }}
+    requirements:
+      build:
+        - gfortran_{{ target_platform }}   # [target_platform != cross_target_platform]
+      host:
+        - gfortran_impl_{{ cross_target_platform }} =={{ version }}{{ version_suffix }}
+      run:
+        - clang
+        - ld64_{{ cross_target_platform }}
+        - cctools_{{ cross_target_platform }}
+        - gfortran_impl_{{ cross_target_platform }} =={{ version }}{{ version_suffix }}
+        - gfortran_impl_{{ target_platform }}
+        - libgfortran-devel_{{ cross_target_platform }} =={{ version }}{{ version_suffix }}
+        - libgfortran-devel_{{ target_platform }}         # [osx]
+        - libgfortran {{ libgfortran_major_version }}.*                                   # [target_platform == cross_target_platform]
+        - libgfortran{{ libgfortran_major_version }} >={{ version }}{{ version_suffix }}  # [target_platform == cross_target_platform]
+        - clang_{{ cross_target_platform }}
+    test:
+      files:
+        - hello.f90
+        - maths.f90
+      commands:
+        - echo {{ MACOSX_DEPLOYMENT_TARGET }}
+        - {{ macos_machine }}-gfortran --help
+        - test "$(readlink $PREFIX/lib/gcc/{{ macos_machine }}/{{ version }}/clang)" = "../../../../bin/clang"
 
-test:
-  files:
-    - hello.f90
-    - maths.f90
-  commands:
-    - echo {{ MACOSX_DEPLOYMENT_TARGET }}
-    - gfortran --help
-    - test "$(readlink $PREFIX/lib/gcc/{{ macos_machine }}/{{ version }}/clang)" = "../../../../bin/clang"
+  - name: gfortran
+    build:
+      skip: True  # [cross_target_platform != target_platform]
+      skip: True  # [win]
+      skip: True  # [gfortran_version in ("11.0.0", "10.2.1") and cross_target_platform != "osx-arm64"]
+      skip: True  # [gfortran_version not in ("11.0.0", "10.2.1") and (cross_target_platform == "osx-arm64" or target_platform == "osx-arm64")]
+    requirements:
+      run:
+        - gfortran_{{ cross_target_platform }}
+        - ld64
+        - cctools
+    test:
+      commands:
+        - echo {{ MACOSX_DEPLOYMENT_TARGET }}
+        - gfortran --help
 
 about:
   home: http://gcc.gnu.org/
