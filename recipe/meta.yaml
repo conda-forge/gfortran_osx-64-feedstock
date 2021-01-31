@@ -50,14 +50,13 @@ outputs:
         - libgfortran {{ libgfortran_major_version }}.*                                   # [target_platform == cross_target_platform]
         - libgfortran{{ libgfortran_major_version }} >={{ version }}{{ version_suffix }}  # [target_platform == cross_target_platform]
         - clang_{{ cross_target_platform }}
-
     test:
       files:
         - hello.f90
         - maths.f90
       commands:
         - echo {{ MACOSX_DEPLOYMENT_TARGET }}
-        - gfortran --help
+        - {{ macos_machine }}-gfortran --help
         - test "$(readlink $PREFIX/lib/gcc/{{ macos_machine }}/{{ version }}/clang)" = "../../../../bin/clang"
 
   - name: gfortran
@@ -66,12 +65,15 @@ outputs:
       skip: True  # [win]
       skip: True  # [gfortran_version in ("11.0.0", "10.2.1") and cross_target_platform != "osx-arm64"]
       skip: True  # [gfortran_version not in ("11.0.0", "10.2.1") and (cross_target_platform == "osx-arm64" or target_platform == "osx-arm64")]
-
     requirements:
       run:
         - gfortran_{{ cross_target_platform }}
         - ld64
         - cctools
+    test:
+      commands:
+        - echo {{ MACOSX_DEPLOYMENT_TARGET }}
+        - gfortran --help
 
 about:
   home: http://gcc.gnu.org/
