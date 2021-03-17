@@ -10,7 +10,7 @@
 {% endif %}
 
 {% set version_suffix = "" %}
-{% if gfortran_version == "11.0.0" %}
+{% if gfortran_version == "11.0.1" %}
 {% set version_suffix = ".dev0" %}
 {% endif %}
 
@@ -19,10 +19,10 @@ package:
   version: {{ version }}{{ version_suffix }}
 
 build:
-  number: 13
+  number: 14
   skip: True  # [win]
-  skip: True  # [gfortran_version in ("11.0.0", "10.2.1") and cross_target_platform != "osx-arm64"]
-  skip: True  # [gfortran_version not in ("11.0.0", "10.2.1") and (cross_target_platform == "osx-arm64" or target_platform == "osx-arm64")]
+  skip: True  # [gfortran_version in ("11.0.1", "10.2.1") and cross_target_platform != "osx-arm64"]
+  skip: True  # [gfortran_version not in ("11.0.1", "10.2.1") and (cross_target_platform == "osx-arm64" or target_platform == "osx-arm64")]
 
 outputs:
   - name: gfortran_{{ cross_target_platform }}
@@ -63,8 +63,8 @@ outputs:
     build:
       skip: True  # [cross_target_platform != target_platform]
       skip: True  # [win]
-      skip: True  # [gfortran_version in ("11.0.0", "10.2.1") and cross_target_platform != "osx-arm64"]
-      skip: True  # [gfortran_version not in ("11.0.0", "10.2.1") and (cross_target_platform == "osx-arm64" or target_platform == "osx-arm64")]
+      skip: True  # [gfortran_version in ("11.0.1", "10.2.1") and cross_target_platform != "osx-arm64"]
+      skip: True  # [gfortran_version not in ("11.0.1", "10.2.1") and (cross_target_platform == "osx-arm64" or target_platform == "osx-arm64")]
     requirements:
       run:
         - gfortran_{{ cross_target_platform }}
