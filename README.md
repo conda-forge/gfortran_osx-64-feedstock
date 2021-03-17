@@ -34,10 +34,10 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cross_target_platformosx-64gfortran_version11.0.0macos_machinex86_64-apple-darwin13.4.0</td>
+              <td>linux_64_cross_target_platformosx-64gfortran_version11.0.1macos_machinex86_64-apple-darwin13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6148&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=master&jobName=linux&configuration=linux_64_cross_target_platformosx-64gfortran_version11.0.0macos_machinex86_64-apple-darwin13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=master&jobName=linux&configuration=linux_64_cross_target_platformosx-64gfortran_version11.0.1macos_machinex86_64-apple-darwin13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -62,10 +62,10 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cross_target_platformosx-arm64gfortran_version11.0.0macos_machinearm64-apple-darwin20.0.0</td>
+              <td>linux_64_cross_target_platformosx-arm64gfortran_version11.0.1macos_machinearm64-apple-darwin20.0.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6148&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=master&jobName=linux&configuration=linux_64_cross_target_platformosx-arm64gfortran_version11.0.0macos_machinearm64-apple-darwin20.0.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=master&jobName=linux&configuration=linux_64_cross_target_platformosx-arm64gfortran_version11.0.1macos_machinearm64-apple-darwin20.0.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -90,10 +90,10 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_cross_target_platformosx-64gfortran_version11.0.0macos_machinex86_64-apple-darwin13.4.0</td>
+              <td>osx_64_cross_target_platformosx-64gfortran_version11.0.1macos_machinex86_64-apple-darwin13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6148&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=master&jobName=osx&configuration=osx_64_cross_target_platformosx-64gfortran_version11.0.0macos_machinex86_64-apple-darwin13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=master&jobName=osx&configuration=osx_64_cross_target_platformosx-64gfortran_version11.0.1macos_machinex86_64-apple-darwin13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -118,10 +118,10 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_cross_target_platformosx-arm64gfortran_version11.0.0macos_machinearm64-apple-darwin20.0.0</td>
+              <td>osx_64_cross_target_platformosx-arm64gfortran_version11.0.1macos_machinearm64-apple-darwin20.0.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6148&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=master&jobName=osx&configuration=osx_64_cross_target_platformosx-arm64gfortran_version11.0.0macos_machinearm64-apple-darwin20.0.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=master&jobName=osx&configuration=osx_64_cross_target_platformosx-arm64gfortran_version11.0.1macos_machinearm64-apple-darwin20.0.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
@@ -146,10 +146,10 @@ Current build status
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_cross_target_platformosx-arm64gfortran_version11.0.0macos_machinearm64-apple-darwin20.0.0</td>
+              <td>osx_arm64_cross_target_platformosx-arm64gfortran_version11.0.1macos_machinearm64-apple-darwin20.0.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6148&branchName=master">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=master&jobName=osx&configuration=osx_arm64_cross_target_platformosx-arm64gfortran_version11.0.0macos_machinearm64-apple-darwin20.0.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=master&jobName=osx&configuration=osx_arm64_cross_target_platformosx-arm64gfortran_version11.0.1macos_machinearm64-apple-darwin20.0.0" alt="variant">
                 </a>
               </td>
             </tr>
@@ -246,9 +246,9 @@ build distinct package versions.
 
 In order to produce a uniquely identifiable distribution:
  * If the version of a package **is not** being increased, please add or increase
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string).
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string).
  * If the version of a package **is** being increased, please remember to return
-   the [``build/number``](https://conda.io/docs/user-guide/tasks/build-packages/define-metadata.html#build-number-and-string)
+   the [``build/number``](https://docs.conda.io/projects/conda-build/en/latest/resources/define-metadata.html#build-number-and-string)
    back to 0.
 
 Feedstock Maintainers
