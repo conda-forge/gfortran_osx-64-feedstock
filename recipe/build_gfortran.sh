@@ -49,4 +49,4 @@ ln -s ${PREFIX}/bin/${CHOST}-strip    $PREFIX/lib/gcc/${CHOST}/${gfortran_versio
 ln -s ${PREFIX}/bin/${CHOST}-ld       $PREFIX/lib/gcc/${CHOST}/${gfortran_version}/ld
 
 # remove this symlink so that conda-build doesn't follow symlinks
-rm ${PREFIX}/bin/clang
+rm -f ${PREFIX}/bin/clang
