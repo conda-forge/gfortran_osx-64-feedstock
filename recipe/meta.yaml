@@ -14,10 +14,6 @@
 {% set version_suffix = ".dev0" %}
 {% endif %}
 
-{% if target_platform is not defined %}
-{% set target_platform = "none" %}
-{% endif %}
-
 package:
   name: gfortran-split
   version: {{ version }}{{ version_suffix }}
@@ -42,8 +38,8 @@ outputs:
       build:
       host:
         - gfortran_impl_{{ cross_target_platform }} =={{ version }}{{ version_suffix }}
-        - clang_{{ target_platform }}    # [target_platform.startswith("osx-")]
-        - gcc_{{ target_platform }}      # [target_platform.startswith("linux-")]
+        - clang_{{ target_platform }}    # [osx]
+        - gcc_{{ target_platform }}      # [linux]
       run:
         - clang
         - ld64_{{ cross_target_platform }}
