@@ -14,6 +14,11 @@
 {% set version_suffix = ".dev0" %}
 {% endif %}
 
+{% set version_suffix = "" %}
+{% if gfortran_version == "12.0.1" %}
+{% set version_suffix = ".dev0" %}
+{% endif %}
+
 package:
   name: gfortran-split
   version: {{ version }}{{ version_suffix }}
