@@ -1,28 +1,19 @@
 {% if gfortran_version is not defined %}
-{% set gfortran_version = "7.5.0" %}
+{% set gfortran_version = "11.3.0" %}
 {% endif %}
 {% set version = gfortran_version %}
 
-{% if gfortran_version == "7.5.0" %}
-{% set libgfortran_major_version = "4" %}
-{% else %}
 {% set libgfortran_major_version = "5" %}
-{% endif %}
 
 {% set version_suffix = "" %}
-{% if gfortran_version == "11.0.1" %}
-{% set version_suffix = ".dev0" %}
-{% endif %}
 
 package:
   name: gfortran-split
   version: {{ version }}{{ version_suffix }}
 
 build:
-  number: 15
+  number: 0
   skip: True  # [win]
-  skip: True  # [gfortran_version in ("11.0.1", "10.2.1") and cross_target_platform != "osx-arm64"]
-  skip: True  # [gfortran_version not in ("11.0.1", "10.2.1") and (cross_target_platform == "osx-arm64" or target_platform == "osx-arm64")]
 
 outputs:
   - name: gfortran_{{ cross_target_platform }}
