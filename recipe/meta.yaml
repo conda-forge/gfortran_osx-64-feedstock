@@ -55,8 +55,6 @@ outputs:
     build:
       skip: True  # [cross_target_platform != target_platform]
       skip: True  # [win]
-      skip: True  # [gfortran_version in ("11.0.1", "10.2.1") and cross_target_platform != "osx-arm64"]
-      skip: True  # [gfortran_version not in ("11.0.1", "10.2.1") and (cross_target_platform == "osx-arm64" or target_platform == "osx-arm64")]
     requirements:
       run:
         - gfortran_{{ cross_target_platform }}
