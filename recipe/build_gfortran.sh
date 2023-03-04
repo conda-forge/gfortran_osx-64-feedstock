@@ -40,6 +40,14 @@ mkdir -p ${PREFIX}/etc/conda/{de,}activate.d
 cp "${SRC_DIR}"/activate-gfortran.sh ${PREFIX}/etc/conda/activate.d/activate-${PKG_NAME}.sh
 cp "${SRC_DIR}"/deactivate-gfortran.sh ${PREFIX}/etc/conda/deactivate.d/deactivate-${PKG_NAME}.sh
 
+echo "chost = "
+echo ${CHOST}
+echo ${gfortran_version}
+echo "ls1"
+ls $PREFIX/lib/gcc/${CHOST}
+echo "ls2"
+ls $PREFIX/lib/gcc/${CHOST}/${gfortran_version}
+
 ln -s ${PREFIX}/bin/${CHOST}-ar       $PREFIX/lib/gcc/${CHOST}/${gfortran_version}/ar
 ln -s ${PREFIX}/bin/${CHOST}-as       $PREFIX/lib/gcc/${CHOST}/${gfortran_version}/as
 ln -s ${PREFIX}/bin/clang             $PREFIX/lib/gcc/${CHOST}/${gfortran_version}/clang
