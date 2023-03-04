@@ -50,7 +50,7 @@ outputs:
         - echo {{ MACOSX_DEPLOYMENT_TARGET }}
         - echo CROSS_TESTING
         - ls -l $PREFIX/lib
-        - ls -l $PREFIX/gcc/{{ macos_machine }}/{{ version }}/
+        - ls -l $PREFIX/lib/gcc/{{ macos_machine }}/{{ version }}/
         - {{ macos_machine }}-gfortran --help
         - test "$(readlink $PREFIX/lib/gcc/{{ macos_machine }}/{{ version }}/clang)" = "../../../../bin/clang"
 
