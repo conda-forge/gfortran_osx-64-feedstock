@@ -48,6 +48,9 @@ outputs:
         - maths.f90
       commands:
         - echo {{ MACOSX_DEPLOYMENT_TARGET }}
+        - echo CROSS_TESTING
+        - ls -l $PREFIX/lib
+        - ls -l $PREFIX/gcc/{{ macos_machine }}/{{ version }}/
         - {{ macos_machine }}-gfortran --help
         - test "$(readlink $PREFIX/lib/gcc/{{ macos_machine }}/{{ version }}/clang)" = "../../../../bin/clang"
 
@@ -63,6 +66,7 @@ outputs:
     test:
       commands:
         - echo {{ MACOSX_DEPLOYMENT_TARGET }}
+        - echo NATIVE_TESTING
         - gfortran --help
 
 about:
