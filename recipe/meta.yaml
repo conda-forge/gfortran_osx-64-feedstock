@@ -31,6 +31,7 @@ outputs:
         - gfortran_impl_{{ cross_target_platform }} =={{ version }}{{ version_suffix }}
         - clang_{{ target_platform }}    # [osx]
         - gcc_{{ target_platform }}      # [linux]
+        - binutils =2.36.1
       run:
         - clang
         - ld64_{{ cross_target_platform }}
@@ -42,7 +43,7 @@ outputs:
         - libgfortran {{ libgfortran_major_version }}.*                                   # [target_platform == cross_target_platform]
         - libgfortran{{ libgfortran_major_version }} >={{ version }}{{ version_suffix }}  # [target_platform == cross_target_platform]
         - clang_{{ cross_target_platform }}
-        - binutils =2.39
+        - binutils =2.36.1
     test:
       files:
         - hello.f90
