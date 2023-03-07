@@ -11,7 +11,7 @@ package:
 
 build:
   number: 1
-  skip: True  # [not osx]
+  skip: True  # [win]
 
 outputs:
   - name: gfortran_{{ cross_target_platform }}
