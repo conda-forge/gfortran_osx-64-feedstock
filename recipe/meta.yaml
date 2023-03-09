@@ -5,14 +5,12 @@
 
 {% set libgfortran_major_version = "5" %}
 
-{% set version_suffix = "" %}
-
 package:
   name: gfortran-split
-  version: {{ version }}{{ version_suffix }}
+  version: {{ version }}
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win]
 
 outputs:
@@ -22,25 +20,25 @@ outputs:
       run_exports:
         strong:
           - libgfortran {{ libgfortran_major_version }}.*
-          - libgfortran{{ libgfortran_major_version }} >={{ version }}{{ version_suffix }}
+          - libgfortran{{ libgfortran_major_version }} >={{ version }}
       ignore_run_exports_from:
         - gfortran_{{ target_platform }}
     requirements:
       build:
       host:
-        - gfortran_impl_{{ cross_target_platform }} =={{ version }}{{ version_suffix }}
+        - gfortran_impl_{{ cross_target_platform }} =={{ version }}
         - clang_{{ target_platform }}    # [osx]
         - gcc_{{ target_platform }}      # [linux]
       run:
         - clang
         - ld64_{{ cross_target_platform }}
         - cctools_{{ cross_target_platform }}
-        - gfortran_impl_{{ cross_target_platform }} =={{ version }}{{ version_suffix }}
+        - gfortran_impl_{{ cross_target_platform }} =={{ version }}
         - gfortran_impl_{{ target_platform }}
-        - libgfortran-devel_{{ cross_target_platform }} =={{ version }}{{ version_suffix }}
+        - libgfortran-devel_{{ cross_target_platform }} =={{ version }}
         - libgfortran-devel_{{ target_platform }}         # [osx]
         - libgfortran {{ libgfortran_major_version }}.*                                   # [target_platform == cross_target_platform]
-        - libgfortran{{ libgfortran_major_version }} >={{ version }}{{ version_suffix }}  # [target_platform == cross_target_platform]
+        - libgfortran{{ libgfortran_major_version }} >={{ version }}  # [target_platform == cross_target_platform]
         - clang_{{ cross_target_platform }}
     test:
       files:
@@ -75,3 +73,4 @@ extra:
   recipe-maintainers:
     - beckermr
     - isuruf
+    - erykoff
