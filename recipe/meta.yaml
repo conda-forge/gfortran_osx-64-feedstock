@@ -10,7 +10,7 @@ package:
   version: {{ version }}
 
 build:
-  number: 1
+  number: 0
   skip: True  # [win]
 
 outputs:
@@ -37,7 +37,7 @@ outputs:
         - gfortran_impl_{{ target_platform }}
         - libgfortran-devel_{{ cross_target_platform }} =={{ version }}
         - libgfortran-devel_{{ target_platform }}         # [osx]
-        - libgfortran {{ libgfortran_major_version }}.*                                   # [target_platform == cross_target_platform]
+        - libgfortran {{ libgfortran_major_version }}.*               # [target_platform == cross_target_platform]
         - libgfortran{{ libgfortran_major_version }} >={{ version }}  # [target_platform == cross_target_platform]
         - clang_{{ cross_target_platform }}
     test:
@@ -50,10 +50,13 @@ outputs:
         - test "$(readlink $PREFIX/lib/gcc/{{ macos_machine }}/{{ version }}/clang)" = "../../../../bin/clang"
 
   - name: gfortran
+    script: install_symlink.sh
     build:
       skip: True  # [cross_target_platform != target_platform]
       skip: True  # [win]
     requirements:
+      host:
+        - gfortran_{{ cross_target_platform }}
       run:
         - gfortran_{{ cross_target_platform }}
         - ld64
