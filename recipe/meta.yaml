@@ -56,9 +56,9 @@ outputs:
       skip: True  # [win]
     requirements:
       host:
-        - gfortran_{{ cross_target_platform }}
+        - gfortran_{{ cross_target_platform }} =={{ version }}
       run:
-        - gfortran_{{ cross_target_platform }}
+        - gfortran_{{ cross_target_platform }} =={{ version }}
         - ld64
         - cctools
     test:
