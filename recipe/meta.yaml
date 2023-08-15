@@ -10,7 +10,7 @@ package:
   version: {{ version }}
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win]
 
 outputs:
@@ -56,9 +56,9 @@ outputs:
       skip: True  # [win]
     requirements:
       host:
-        - gfortran_{{ cross_target_platform }}
+        - gfortran_{{ cross_target_platform }} =={{ version }}
       run:
-        - gfortran_{{ cross_target_platform }}
+        - gfortran_{{ cross_target_platform }} =={{ version }}
         - ld64
         - cctools
     test:
