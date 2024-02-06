@@ -47,6 +47,11 @@ ln -s ${PREFIX}/bin/${CHOST}-nm       $PREFIX/lib/gcc/${CHOST}/${gfortran_versio
 ln -s ${PREFIX}/bin/${CHOST}-ranlib   $PREFIX/lib/gcc/${CHOST}/${gfortran_version}/ranlib
 ln -s ${PREFIX}/bin/${CHOST}-strip    $PREFIX/lib/gcc/${CHOST}/${gfortran_version}/strip
 ln -s ${PREFIX}/bin/${CHOST}-ld       $PREFIX/lib/gcc/${CHOST}/${gfortran_version}/ld
+echo "=== DEBUG ==="
+ls ${PREFIX}
+ls ${PREFIX}/include
+echo "=== END DEBUG ==="
+ln -s ${PREFIX}/include/ISO_Fortran_binding.h   ${PREFIX}/lib/gcc/${CHOST}/${gfortran_version}/include/ISO_Fortran_binding.h
 
 # remove this symlink so that conda-build doesn't follow symlinks
 rm -f ${PREFIX}/bin/clang
