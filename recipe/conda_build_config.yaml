@@ -5,10 +5,12 @@ cross_target_platform:
   - osx-64
   - osx-arm64
 gfortran_version:
-  - 12.3.0
-  - 13.2.0
+  - 14.2.0
+  - 13.3.0
+  - 12.4.0
 zip_keys:
   - - cross_target_platform
     - macos_machine
-MACOSX_DEPLOYMENT_TARGET:
-  - 10.9
+# only for linux; osx is covered by c_stdlib_version from global pinning
+MACOSX_DEPLOYMENT_TARGET:   # [not osx]
+  - 10.9                    # [not osx]
