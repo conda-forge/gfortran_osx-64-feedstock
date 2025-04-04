@@ -10,7 +10,7 @@ package:
   version: {{ version }}
 
 build:
-  number: 0
+  number: 1
   skip: True  # [win]
 
 outputs:
@@ -19,7 +19,7 @@ outputs:
     build:
       run_exports:
         strong:
-          - libgfortran {{ libgfortran_major_version }}.*
+          - libgfortran
           - libgfortran{{ libgfortran_major_version }} >={{ version }}
       ignore_run_exports_from:
         - gfortran_{{ target_platform }}
