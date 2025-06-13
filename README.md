@@ -27,129 +27,129 @@ Current build status
         <table>
           <thead><tr><th>Variant</th><th>Status</th></tr></thead>
           <tbody><tr>
-              <td>linux_64_cross_target_platformosx-64gfortran_version12.4.0macos_machinex86_64-apple-darwin13.4.0</td>
+              <td>linux_64_cross_target_platformosx-64gfortran_version13.4.0macos_machinex86_64-apple-darwin13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6148&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformosx-64gfortran_version12.4.0macos_machinex86_64-apple-darwin13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformosx-64gfortran_version13.4.0macos_machinex86_64-apple-darwin13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cross_target_platformosx-64gfortran_version13.3.0macos_machinex86_64-apple-darwin13.4.0</td>
+              <td>linux_64_cross_target_platformosx-64gfortran_version14.3.0macos_machinex86_64-apple-darwin13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6148&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformosx-64gfortran_version13.3.0macos_machinex86_64-apple-darwin13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformosx-64gfortran_version14.3.0macos_machinex86_64-apple-darwin13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cross_target_platformosx-64gfortran_version14.2.0macos_machinex86_64-apple-darwin13.4.0</td>
+              <td>linux_64_cross_target_platformosx-64gfortran_version15.1.0macos_machinex86_64-apple-darwin13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6148&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformosx-64gfortran_version14.2.0macos_machinex86_64-apple-darwin13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformosx-64gfortran_version15.1.0macos_machinex86_64-apple-darwin13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cross_target_platformosx-arm64gfortran_version12.4.0macos_machinearm64-apple-darwin20.0.0</td>
+              <td>linux_64_cross_target_platformosx-arm64gfortran_version13.4.0macos_machinearm64-apple-darwin20.0.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6148&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformosx-arm64gfortran_version12.4.0macos_machinearm64-apple-darwin20.0.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformosx-arm64gfortran_version13.4.0macos_machinearm64-apple-darwin20.0.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cross_target_platformosx-arm64gfortran_version13.3.0macos_machinearm64-apple-darwin20.0.0</td>
+              <td>linux_64_cross_target_platformosx-arm64gfortran_version14.3.0macos_machinearm64-apple-darwin20.0.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6148&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformosx-arm64gfortran_version13.3.0macos_machinearm64-apple-darwin20.0.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformosx-arm64gfortran_version14.3.0macos_machinearm64-apple-darwin20.0.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>linux_64_cross_target_platformosx-arm64gfortran_version14.2.0macos_machinearm64-apple-darwin20.0.0</td>
+              <td>linux_64_cross_target_platformosx-arm64gfortran_version15.1.0macos_machinearm64-apple-darwin20.0.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6148&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformosx-arm64gfortran_version14.2.0macos_machinearm64-apple-darwin20.0.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=linux&configuration=linux%20linux_64_cross_target_platformosx-arm64gfortran_version15.1.0macos_machinearm64-apple-darwin20.0.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_cross_target_platformosx-64gfortran_version12.4.0macos_machinex86_64-apple-darwin13.4.0</td>
+              <td>osx_64_cross_target_platformosx-64gfortran_version13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6148&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_cross_target_platformosx-64gfortran_version12.4.0macos_machinex86_64-apple-darwin13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_cross_target_platformosx-64gfortran_version13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_cross_target_platformosx-64gfortran_version13.3.0macos_machinex86_64-apple-darwin13.4.0</td>
+              <td>osx_64_cross_target_platformosx-64gfortran_version14.3.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6148&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_cross_target_platformosx-64gfortran_version13.3.0macos_machinex86_64-apple-darwin13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_cross_target_platformosx-64gfortran_version14.3.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_cross_target_platformosx-64gfortran_version14.2.0macos_machinex86_64-apple-darwin13.4.0</td>
+              <td>osx_64_cross_target_platformosx-64gfortran_version15.1.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6148&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_cross_target_platformosx-64gfortran_version14.2.0macos_machinex86_64-apple-darwin13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_cross_target_platformosx-64gfortran_version15.1.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_cross_target_platformosx-arm64gfortran_version12.4.0macos_machinearm64-apple-darwin20.0.0</td>
+              <td>osx_64_cross_target_platformosx-arm64gfortran_version13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6148&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_cross_target_platformosx-arm64gfortran_version12.4.0macos_machinearm64-apple-darwin20.0.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_cross_target_platformosx-arm64gfortran_version13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_cross_target_platformosx-arm64gfortran_version13.3.0macos_machinearm64-apple-darwin20.0.0</td>
+              <td>osx_64_cross_target_platformosx-arm64gfortran_version14.3.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6148&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_cross_target_platformosx-arm64gfortran_version13.3.0macos_machinearm64-apple-darwin20.0.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_cross_target_platformosx-arm64gfortran_version14.3.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_64_cross_target_platformosx-arm64gfortran_version14.2.0macos_machinearm64-apple-darwin20.0.0</td>
+              <td>osx_64_cross_target_platformosx-arm64gfortran_version15.1.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6148&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_cross_target_platformosx-arm64gfortran_version14.2.0macos_machinearm64-apple-darwin20.0.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_64_cross_target_platformosx-arm64gfortran_version15.1.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_cross_target_platformosx-64gfortran_version12.4.0macos_machinex86_64-apple-darwin13.4.0</td>
+              <td>osx_arm64_cross_target_platformosx-64gfortran_version13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6148&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_cross_target_platformosx-64gfortran_version12.4.0macos_machinex86_64-apple-darwin13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_cross_target_platformosx-64gfortran_version13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_cross_target_platformosx-64gfortran_version13.3.0macos_machinex86_64-apple-darwin13.4.0</td>
+              <td>osx_arm64_cross_target_platformosx-64gfortran_version14.3.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6148&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_cross_target_platformosx-64gfortran_version13.3.0macos_machinex86_64-apple-darwin13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_cross_target_platformosx-64gfortran_version14.3.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_cross_target_platformosx-64gfortran_version14.2.0macos_machinex86_64-apple-darwin13.4.0</td>
+              <td>osx_arm64_cross_target_platformosx-64gfortran_version15.1.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6148&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_cross_target_platformosx-64gfortran_version14.2.0macos_machinex86_64-apple-darwin13.4.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_cross_target_platformosx-64gfortran_version15.1.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_cross_target_platformosx-arm64gfortran_version12.4.0macos_machinearm64-apple-darwin20.0.0</td>
+              <td>osx_arm64_cross_target_platformosx-arm64gfortran_version13.4.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6148&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_cross_target_platformosx-arm64gfortran_version12.4.0macos_machinearm64-apple-darwin20.0.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_cross_target_platformosx-arm64gfortran_version13.4.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_cross_target_platformosx-arm64gfortran_version13.3.0macos_machinearm64-apple-darwin20.0.0</td>
+              <td>osx_arm64_cross_target_platformosx-arm64gfortran_version14.3.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6148&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_cross_target_platformosx-arm64gfortran_version13.3.0macos_machinearm64-apple-darwin20.0.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_cross_target_platformosx-arm64gfortran_version14.3.0" alt="variant">
                 </a>
               </td>
             </tr><tr>
-              <td>osx_arm64_cross_target_platformosx-arm64gfortran_version14.2.0macos_machinearm64-apple-darwin20.0.0</td>
+              <td>osx_arm64_cross_target_platformosx-arm64gfortran_version15.1.0</td>
               <td>
                 <a href="https://dev.azure.com/conda-forge/feedstock-builds/_build/latest?definitionId=6148&branchName=main">
-                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_cross_target_platformosx-arm64gfortran_version14.2.0macos_machinearm64-apple-darwin20.0.0" alt="variant">
+                  <img src="https://dev.azure.com/conda-forge/feedstock-builds/_apis/build/status/gfortran_osx-64-feedstock?branchName=main&jobName=osx&configuration=osx%20osx_arm64_cross_target_platformosx-arm64gfortran_version15.1.0" alt="variant">
                 </a>
               </td>
             </tr>
@@ -166,8 +166,8 @@ Current release info
 | Name | Downloads | Version | Platforms |
 | --- | --- | --- | --- |
 | [![Conda Recipe](https://img.shields.io/badge/recipe-gfortran-green.svg)](https://anaconda.org/conda-forge/gfortran) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gfortran.svg)](https://anaconda.org/conda-forge/gfortran) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gfortran.svg)](https://anaconda.org/conda-forge/gfortran) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gfortran.svg)](https://anaconda.org/conda-forge/gfortran) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-gfortran_osx--64-green.svg)](https://anaconda.org/conda-forge/gfortran_osx-64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gfortran_osx-64.svg)](https://anaconda.org/conda-forge/gfortran_osx-64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gfortran_osx-64.svg)](https://anaconda.org/conda-forge/gfortran_osx-64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gfortran_osx-64.svg)](https://anaconda.org/conda-forge/gfortran_osx-64) |
-| [![Conda Recipe](https://img.shields.io/badge/recipe-gfortran_osx--arm64-green.svg)](https://anaconda.org/conda-forge/gfortran_osx-arm64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gfortran_osx-arm64.svg)](https://anaconda.org/conda-forge/gfortran_osx-arm64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gfortran_osx-arm64.svg)](https://anaconda.org/conda-forge/gfortran_osx-arm64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gfortran_osx-arm64.svg)](https://anaconda.org/conda-forge/gfortran_osx-arm64) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-gfortran__osx--64-green.svg)](https://anaconda.org/conda-forge/gfortran_osx-64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gfortran_osx-64.svg)](https://anaconda.org/conda-forge/gfortran_osx-64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gfortran_osx-64.svg)](https://anaconda.org/conda-forge/gfortran_osx-64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gfortran_osx-64.svg)](https://anaconda.org/conda-forge/gfortran_osx-64) |
+| [![Conda Recipe](https://img.shields.io/badge/recipe-gfortran__osx--arm64-green.svg)](https://anaconda.org/conda-forge/gfortran_osx-arm64) | [![Conda Downloads](https://img.shields.io/conda/dn/conda-forge/gfortran_osx-arm64.svg)](https://anaconda.org/conda-forge/gfortran_osx-arm64) | [![Conda Version](https://img.shields.io/conda/vn/conda-forge/gfortran_osx-arm64.svg)](https://anaconda.org/conda-forge/gfortran_osx-arm64) | [![Conda Platforms](https://img.shields.io/conda/pn/conda-forge/gfortran_osx-arm64.svg)](https://anaconda.org/conda-forge/gfortran_osx-arm64) |
 
 Installing gfortran-split
 =========================
