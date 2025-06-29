@@ -1,5 +1,5 @@
 {% if gfortran_version is not defined %}
-{% set gfortran_version = "14.2.0" %}
+{% set gfortran_version = "15.1.0" %}
 {% endif %}
 {% set version = gfortran_version %}
 
@@ -10,7 +10,7 @@ package:
   version: {{ version }}
 
 build:
-  number: 1
+  number: 0
   skip: True  # [win]
 
 outputs:
@@ -19,7 +19,7 @@ outputs:
     build:
       run_exports:
         strong:
-          - libgfortran {{ libgfortran_major_version }}.*
+          - libgfortran
           - libgfortran{{ libgfortran_major_version }} >={{ version }}
       ignore_run_exports_from:
         - gfortran_{{ target_platform }}
@@ -37,7 +37,7 @@ outputs:
         - gfortran_impl_{{ target_platform }}
         - libgfortran-devel_{{ cross_target_platform }} =={{ version }}
         - libgfortran-devel_{{ target_platform }}         # [osx]
-        - libgfortran {{ libgfortran_major_version }}.*               # [target_platform == cross_target_platform]
+        - libgfortran                                                 # [target_platform == cross_target_platform]
         - libgfortran{{ libgfortran_major_version }} >={{ version }}  # [target_platform == cross_target_platform]
         - clang_{{ cross_target_platform }}
     test:
